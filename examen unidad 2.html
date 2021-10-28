@@ -8,23 +8,50 @@
 		let estatus =("");
 		console.log(estatus);
 	}
+	var reservacion=[];
+	var mesa=["mesa asignada"];
+	mesa[0]=["liz","5denoviembre","mesa"];
+	mesa[1]=["juan","10denoviembre","mesa"];
+	mesa[2]=["Manuel","20denoviembre","mesa"];
+	mesa[3]=["paco","15denoviembre","mesa"];
+    mesa[4]=["pedro","6denoviembre","mesa"];
+	mesa[5]=["Maria","25denoviembre","mesa"]
+ var numero_mesa=parseInt(prompt("Número de mesa asignada"));
+	for(let a=0; a<numero_mesa; a++){
+	 	mesa[a]=[];
+		do{
+	 		mesa[a][0]=prompt("Nombre "+(a+1))??"";
+	 	}while(mesa[a][0]=="");
+	 	do{
+		mesa[a][1]=prompt("dia "+(a+1))??"";
+	 	}while(mesa[a][1]=="");
+	 	do{
+	 		mesa[a][2]=prompt("mesa "+(a+1))??"";
+	 	}while(mesa[a][2]=="");
+      	do{
+	 		mesa[a][3]=prompt("reservacion("+nombre+") "+(a+1))??"";
+	 		mesa[a][3]=(mesa[a][3]==nombre[0] || mesa[a][3]==mesa[1])?mesa[a][3]:"";
+	 	}while(mesa[a][3]=="");
+	 	do{
+	 		mesa[a][4]=prompt("reservacion"+(a+1))??"";
+	 	}while(mesa[a][4]=="");
+	 }
+	console.log(mesa);
 	function mesa_elegida(mesa,nombre){
-		for(let a in alumnos){
-			if(alumnos[a][0]==busqueda || alumnos[a][1]==busqueda){
-				let datos_alumno="";
-				datos_alumno+="Nombre: "+alumnos[a][0];
-				datos_alumno+="\nMátricula: "+alumnos[a][1];
-				datos_alumno+="\nGrupo: "+alumnos[a][2];
-				datos_alumno+="\nGenero: "+alumnos[a][3];
-				datos_alumno+="\nCalificación: "+alumnos[a][4];
-				if(alumnos[a][2]==grupo_actual || grupo_actual=="Todos"){
-					return datos_alumno;
+		for(let a in nombre){
+			if(mesa==mesa|| mesa==mesa){
+				let mesa_elegida="";
+				datos_reservacion+="Nombre: "+mesa;
+				datos_reservacion+="\ndia: "+mesa;
+				datos_reservacion+="\nmesa: "+mesa;
+				if(mesa==datos_reservacion|| datos_reservacion=="nombre"){
+					return datos_reservacion;
 				}else{
-					return "No existe el alumno ( "+busqueda+" ) en el grupo ( "+grupo_actual+" )";
+					return "No disponible ( "+busqueda+" ) en la mesa ( "+datos_reservacion+" )";
 				}
 			}
 		}
-		return "No existe el alumno ( "+busqueda+" )";
+		return "No disponible ( "+busqueda+" )";
 	} 
 	function disponible (){
 		let estatus = nombre[nombreAleatorio(0,nombre.length-1)];
@@ -43,5 +70,7 @@ function reservacion(n){
 	for (var i = 0; i < n; i++)
 	mesa = mesa + dia(nombreAleatorio(0,dia.length-1));
 }
+var opc_reservacion = parseint(prompt("ingrese su nombre /n + nombre"));
+
  console.log(mesa)
 </script>
