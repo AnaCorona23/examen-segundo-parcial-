@@ -1,0 +1,47 @@
+<script>
+    //restaurante 
+	var nombre=["liz","juan","paco","manuel","pedro","maria"];
+    var dia=["5 de noviembre","10 de noviembre","20 de noviembre","25 de noviembre","6 de noviembre","15 de noviembre"];
+    var mesa=["1","2","3","4","5","6"];
+	var reservacion =("aceptada"); 
+	for (var i = 0; i < 6; i++){
+		let estatus =("");
+		console.log(estatus);
+	}
+	function mesa_elegida(mesa,nombre){
+		for(let a in alumnos){
+			if(alumnos[a][0]==busqueda || alumnos[a][1]==busqueda){
+				let datos_alumno="";
+				datos_alumno+="Nombre: "+alumnos[a][0];
+				datos_alumno+="\nMátricula: "+alumnos[a][1];
+				datos_alumno+="\nGrupo: "+alumnos[a][2];
+				datos_alumno+="\nGenero: "+alumnos[a][3];
+				datos_alumno+="\nCalificación: "+alumnos[a][4];
+				if(alumnos[a][2]==grupo_actual || grupo_actual=="Todos"){
+					return datos_alumno;
+				}else{
+					return "No existe el alumno ( "+busqueda+" ) en el grupo ( "+grupo_actual+" )";
+				}
+			}
+		}
+		return "No existe el alumno ( "+busqueda+" )";
+	} 
+	function disponible (){
+		let estatus = nombre[nombreAleatorio(0,nombre.length-1)];
+		let dia = dia[nombreAleatorio(0,dia.length-1)];
+		let mesa = mesa[nombreAleatorio(0,mesa.length-1)];
+		let reservacion = (1,6);
+		if(nombreAleatorio(0,1) == 0){
+			var ocupada = "mesa ocupada";
+
+		}else{
+			var desocupada = "mesa desocupada";
+		}
+	}
+function reservacion(n){
+	let mesa ="";
+	for (var i = 0; i < n; i++)
+	mesa = mesa + dia(nombreAleatorio(0,dia.length-1));
+}
+ console.log(mesa)
+</script>
